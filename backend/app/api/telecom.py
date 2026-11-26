@@ -30,7 +30,7 @@ def _load_telecom_data() -> Dict[str, Any]:
                     "name": "Pooja Sharma",
                     "role": "HR Lead & People Operations",
                     "department": "People & Culture (HR)",
-                    "phone": "+91 98765 43210",
+                    "phone": "",
                     "email": "pooja.hr@opensenselabs.com",
                     "status": "Available"
                 },
@@ -39,7 +39,7 @@ def _load_telecom_data() -> Dict[str, Any]:
                     "name": "Vikram Singh",
                     "role": "DevOps & IT Support Lead",
                     "department": "Platform Engineering",
-                    "phone": "+91 98765 43211",
+                    "phone": "",
                     "email": "vikram.it@opensenselabs.com",
                     "status": "Available"
                 },
@@ -48,7 +48,7 @@ def _load_telecom_data() -> Dict[str, Any]:
                     "name": "Neha Verma",
                     "role": "Marketing & Brand Growth Head",
                     "department": "Marketing & Brand Growth",
-                    "phone": "+91 98765 43212",
+                    "phone": "",
                     "email": "neha.marketing@opensenselabs.com",
                     "status": "In Meeting"
                 },
@@ -57,7 +57,7 @@ def _load_telecom_data() -> Dict[str, Any]:
                     "name": "Amit Roy",
                     "role": "VP Enterprise Client Partnerships",
                     "department": "Business Development (Sales)",
-                    "phone": "+91 98765 43213",
+                    "phone": "",
                     "email": "amit.sales@opensenselabs.com",
                     "status": "Available"
                 },
@@ -66,7 +66,7 @@ def _load_telecom_data() -> Dict[str, Any]:
                     "name": "Siddharth Jain",
                     "role": "Chief Technology Officer (CTO)",
                     "department": "Leadership & Strategy",
-                    "phone": "+91 98765 43214",
+                    "phone": "",
                     "email": "siddharth.cto@opensenselabs.com",
                     "status": "Available"
                 },
@@ -75,7 +75,7 @@ def _load_telecom_data() -> Dict[str, Any]:
                     "name": "OpenSense Reception Desk",
                     "role": "Noida HQ Front Desk",
                     "department": "Workplace Operations",
-                    "phone": "+91 120 456 7890",
+                    "phone": "",
                     "email": "reception@opensenselabs.com",
                     "status": "Available"
                 }

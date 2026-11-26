@@ -74,7 +74,8 @@ async def guest_chat_message(
                 "- Leaves: 12 Casual Leaves (CL), 12 Sick Leaves (SL), 15 Earned Leaves (EL) (up to 10 carry-forward per year), 2 Optional Festival leaves, 26 weeks paid Maternity leave, 2 weeks Paternity leave.\n"
                 "- Health Insurance: ₹5,00,000 INR Family Floater Policy (covers employee, spouse, 2 children), cashless at 10,000+ hospitals, day-1 pre-existing cover, maternity benefit up to ₹50,000.\n"
                 "- Work Timings: 9:30 AM to 6:30 PM IST (Mon-Fri, 5-day week). Hybrid: 3 days in-office at Sector 62 Noida, 2 days remote.\n"
-                "- Key Contacts: Pooja Sharma (HR Lead, pooja.hr@opensenselabs.com), Vikram Singh (DevOps Lead), Neha Verma (Marketing Head), Siddharth Jain (CTO)."
+                "- Key Contacts: Pooja Sharma (HR Lead, pooja.hr@opensenselabs.com), Vikram Singh (DevOps Lead), Neha Verma (Marketing Head), Siddharth Jain (CTO).\n"
+                "- CRITICAL: Never output fake or dummy phone numbers (e.g. 9876543210). Always share official email channels or company portal links."
             )
         }
     ]

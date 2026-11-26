@@ -316,13 +316,15 @@ class AIService:
             "       - Annual Appraisal effective April 1st with transparent career leveling tracks (L1 to L7).\n"
             "       - Mid-year checkpoint in October for goal tracking and mentor reviews.\n"
             "       - ₹25,000 annual professional certification budget for AWS, Acquia, Kubernetes, and AI credentials.\n"
-            "   - REAL INTERNAL DIRECTORY & CONTACTS:\n"
+            "   - REAL INTERNAL DIRECTORY & CONTACTS (OFFICIAL CHANNELS):\n"
             "     * Pooja Sharma (HR Lead & People Ops): pooja.hr@opensenselabs.com\n"
             "     * Vikram Singh (DevOps & IT Support Lead): vikram.it@opensenselabs.com\n"
             "     * Neha Verma (Marketing & Global Brand Head): neha.marketing@opensenselabs.com\n"
             "     * Amit Roy (VP Enterprise Partnerships): amit.sales@opensenselabs.com\n"
             "     * Siddharth Jain (Chief Technology Officer - CTO): siddharth.cto@opensenselabs.com\n"
-            "     * Noida HQ Desk: +91 120 456 7890 (Reception Desk, Logix Cyber Park)\n"
+            "     * General HR Desk: hr@opensenselabs.com | General Support: support@opensenselabs.com\n"
+            "     * Official Website: https://opensenselabs.com | Office: Logix Cyber Park, Tower B, Sector 62, Noida\n"
+            "     * CRITICAL RULE: NEVER invent, fabricate, or output fake phone numbers (e.g. 9876543210 or dummy numbers). Always provide official email channels and corporate portal links.\n"
             "   - REAL ENGINEERING & ARCHITECTURE STANDARDS:\n"
             "     * When writing code, provide COMPLETE, production-grade, typed implementations with robust error handling, docstrings, and run instructions.\n"
             "     * For Decoupled Drupal: Highlight headless JSON:API / GraphQL endpoints with Next.js App Router, Incremental Static Regeneration (ISR), Redis cache tags, and OAuth2 security scopes.\n"
@@ -775,90 +777,38 @@ class AIService:
                 return {"role": "assistant", "content": content, "tool_calls": None, "tool_results": None, "model": "OpenSense-Engineering-Agent"}
 
         # ----------------------------------------------------
-        # CONTACT DIRECTORY & PHONE CALLING INTELLIGENCE
+        # CONTACT DIRECTORY & OFFICIAL SUPPORT CHANNELS
         # ----------------------------------------------------
-        is_call_request = any(w in msg_lower for w in ["call", "phone", "dial", "lagao", "karo phone", "phone lagao", "call lagane", "calling", "milao"])
-        is_directory_request = any(w in msg_lower for w in ["contact list", "directory", "phonebook", "kisko call", "kisko phone", "contacts", "sampark"])
+        is_contact_request = any(w in msg_lower for w in ["contact", "directory", "email", "sampark", "phone", "call", "kisse baat", "pooja", "vikram", "neha", "amit", "siddharth", "hr email", "support email", "kisko contact"])
 
-        if is_call_request or is_directory_request:
+        if is_contact_request:
             contacts = [
-                {"name": "Pooja Sharma", "role": "HR Lead & People Ops", "department": "People & Culture (HR)", "phone": "+91 98765 43210", "email": "pooja.hr@opensenselabs.com", "keywords": ["pooja", "hr", "people", "leave"]},
-                {"name": "Vikram Singh", "role": "DevOps & IT Support Lead", "department": "Platform Engineering", "phone": "+91 98765 43211", "email": "vikram.it@opensenselabs.com", "keywords": ["vikram", "it", "tech", "devops", "support"]},
-                {"name": "Neha Verma", "role": "Marketing & Brand Growth Head", "department": "Marketing & Brand Growth", "phone": "+91 98765 43212", "email": "neha.marketing@opensenselabs.com", "keywords": ["neha", "marketing", "brand", "growth"]},
-                {"name": "Amit Roy", "role": "VP Enterprise Client Partnerships", "department": "Business Development (Sales)", "phone": "+91 98765 43213", "email": "amit.sales@opensenselabs.com", "keywords": ["amit", "sales", "client", "bd"]},
-                {"name": "Siddharth Jain", "role": "Chief Technology Officer (CTO)", "department": "Leadership & Strategy", "phone": "+91 98765 43214", "email": "siddharth.cto@opensenselabs.com", "keywords": ["siddharth", "cto", "lead", "boss"]},
-                {"name": "Noida HQ Front Desk", "role": "Reception & Facility Desk", "department": "Workplace Operations", "phone": "+91 120 456 7890", "email": "reception@opensenselabs.com", "keywords": ["reception", "desk", "noida", "office"]}
+                {"name": "Pooja Sharma", "role": "HR Lead & People Ops", "department": "People & Culture (HR)", "email": "pooja.hr@opensenselabs.com", "slack": "@pooja.sharma", "keywords": ["pooja", "hr", "people", "leave"]},
+                {"name": "Vikram Singh", "role": "DevOps & IT Support Lead", "department": "Platform Engineering", "email": "vikram.it@opensenselabs.com", "slack": "@vikram.singh", "keywords": ["vikram", "it", "tech", "devops", "support"]},
+                {"name": "Neha Verma", "role": "Marketing & Brand Growth Head", "department": "Marketing & Brand Growth", "email": "neha.marketing@opensenselabs.com", "slack": "@neha.verma", "keywords": ["neha", "marketing", "brand", "growth"]},
+                {"name": "Amit Roy", "role": "VP Enterprise Client Partnerships", "department": "Business Development (Sales)", "email": "amit.sales@opensenselabs.com", "slack": "@amit.roy", "keywords": ["amit", "sales", "client", "bd"]},
+                {"name": "Siddharth Jain", "role": "Chief Technology Officer (CTO)", "department": "Leadership & Strategy", "email": "siddharth.cto@opensenselabs.com", "slack": "@siddharth.jain", "keywords": ["siddharth", "cto", "lead", "boss"]},
+                {"name": "OpenSense Helpdesk", "role": "General Employee & Facility Support", "department": "Workplace Operations", "email": "support@opensenselabs.com", "slack": "#it-support", "keywords": ["helpdesk", "reception", "desk", "noida", "office"]}
             ]
 
-            # If user asks to view contacts / directory
-            if is_directory_request and not any(w in msg_lower for w in ["ko call", "ko phone", "call lagao", "dial"]):
-                cards = []
-                for c in contacts:
-                    cards.append(f"• 👤 **{c['name']}** — *{c['role']}*\n  📞 Phone: `{c['phone']}` | ✉️ `{c['email']}`")
-                contacts_formatted = "\n\n".join(cards)
-                content = (
-                    f"📞 **OpenSense Labs Internal Contact Directory:** 🏢✨\n\n"
-                    f"{contacts_formatted}\n\n"
-                    f"💡 *Aap direct bol sakte hain: 'Pooja ko call lagao' ya 'IT desk ko phone lagao' aur live calling interface connect ho jayega!* 📲🚀"
-                )
-                return {
-                    "role": "assistant",
-                    "content": content,
-                    "tool_calls": [{"id": "tool_dir_1", "type": "function", "function": {"name": "opensense_contact_directory", "arguments": "{}"}}],
-                    "tool_results": [{"tool_name": "opensense_contact_directory", "output": {"contacts": contacts}}],
-                    "model": "OpenSense-Telecom-Agent"
-                }
-
-            # If user wants to place a call
-            matched_contact = None
+            cards = []
             for c in contacts:
-                if any(kw in msg_lower for kw in c["keywords"]) or c["name"].lower() in msg_lower:
-                    matched_contact = c
-                    break
-
-            phone_match = re.search(r"(\+?\d[\d\s-]{8,14}\d)", latest_user_msg)
-            custom_phone = phone_match.group(1).replace(" ", "") if phone_match else None
-
-            if not matched_contact and custom_phone:
-                matched_contact = {
-                    "name": "Direct Number",
-                    "role": "External Contact",
-                    "department": "Direct Calling",
-                    "phone": custom_phone,
-                    "email": "telecom@opensenselabs.com"
-                }
-
-            if not matched_contact:
-                matched_contact = contacts[0]  # Default to Pooja Sharma HR
-
-            clean_num = matched_contact["phone"].replace(" ", "").replace("-", "")
-            tel_uri = f"tel:{clean_num}"
-
+                cards.append(f"• 👤 **{c['name']}** — *{c['role']}*\n  ✉️ Email: `{c['email']}` | 💬 Slack: `{c['slack']}`")
+            contacts_formatted = "\n\n".join(cards)
             content = (
-                f"📞 **Calling {matched_contact['name']} ({matched_contact['phone']})...** 📲⚡\n\n"
-                f"• 👤 **Contact Name:** **{matched_contact['name']}**\n"
-                f"• 💼 **Role:** {matched_contact['role']}\n"
-                f"• 🏢 **Department:** {matched_contact['department']}\n"
-                f"• 📱 **Phone Number:** `{matched_contact['phone']}`\n\n"
-                f"🟢 **Live Call Status:** *Ringing... Live Phone dialer active!*\n\n"
-                f"👉 [**Click here to Dial on Phone ({clean_num})**]({tel_uri}) ya neeche diye gaye live calling card se control karein! 🎙️📞"
+                f"📋 **OpenSense Labs Official Contact & Department Directory:** 🏢✨\n\n"
+                f"{contacts_formatted}\n\n"
+                f"• 🏢 **HQ Address:** Logix Cyber Park, Tower B, Sector 62, Noida, Uttar Pradesh 201309\n"
+                f"• 🌐 **Official Portal:** [opensenselabs.com](https://opensenselabs.com)\n"
+                f"• 📩 **General Queries:** `hr@opensenselabs.com` | `support@opensenselabs.com`\n\n"
+                f"💡 *Aap direct email bhej sakte hain ya internal Slack workspace par reach out kar sakte hain!* ✉️🚀"
             )
-
-            call_args = {
-                "contact_name": matched_contact["name"],
-                "phone": matched_contact["phone"],
-                "department": matched_contact["department"],
-                "role": matched_contact["role"],
-                "tel_uri": tel_uri,
-                "status": "ringing"
-            }
-
             return {
                 "role": "assistant",
                 "content": content,
-                "tool_calls": [{"id": f"call_{random.randint(1000, 9999)}", "type": "function", "function": {"name": "opensense_make_phone_call", "arguments": json.dumps(call_args)}}],
-                "tool_results": [{"tool_name": "opensense_make_phone_call", "output": call_args}],
-                "model": "OpenSense-Telecom-Agent"
+                "tool_calls": [{"id": "tool_dir_1", "type": "function", "function": {"name": "opensense_contact_directory", "arguments": "{}"}}],
+                "tool_results": [{"tool_name": "opensense_contact_directory", "output": {"contacts": contacts}}],
+                "model": "OpenSense-Directory-Agent"
             }
 
         # ----------------------------------------------------

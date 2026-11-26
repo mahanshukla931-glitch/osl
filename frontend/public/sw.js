@@ -1,5 +1,5 @@
 // OpenSense Labs AI Assistant PWA Service Worker
-const CACHE_NAME = 'opensense-ai-v18';
+const CACHE_NAME = 'opensense-ai-v19';
 const PRECACHE_ASSETS = [
   '/',
   '/favicon.ico',

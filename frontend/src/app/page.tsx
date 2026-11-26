@@ -296,7 +296,7 @@ const getSmartFollowUpChips = (content: string): { label: string; prompt: string
     return [
       { label: 'Draft Leave Application Email', prompt: 'Draft a professional leave application email for 2 days of casual leave to my lead with project handover details.', icon: '✉️' },
       { label: 'Health Insurance Claim Guide', prompt: 'Explain how cashless hospital admission works under OpenSense ₹5,00,000 family floater policy.', icon: '🏥' },
-      { label: 'Contact Pooja Sharma (HR)', prompt: 'Pooja Sharma HR Lead ko call lagao ya contact details batao.', icon: '📞' },
+      { label: 'Contact Pooja Sharma (HR)', prompt: 'Pooja Sharma HR Lead ka official email aur contact details batao.', icon: '✉️' },
     ];
   }
 
@@ -328,7 +328,59 @@ const getSmartFollowUpChips = (content: string): { label: string; prompt: string
     return [
       { label: 'Check Global Wall Clocks', prompt: 'What is the exact live wall-clock time across OpenSense India HQ, US Hub, and UK Hub?', icon: '⏰' },
       { label: 'Noida HQ Address & Route', prompt: 'Where is OpenSense Labs located in Sector 62 Noida and what are the visitor coordinates?', icon: '📍' },
-      { label: 'Internal Contact Directory', prompt: 'Show the complete internal contact directory with phone numbers and emails.', icon: '📞' },
+      { label: 'Official Team Directory', prompt: 'Show the official internal team directory with verified email channels.', icon: '📋' },
+    ];
+  }
+
+  return [
+    { label: 'Leave & Medical Benefits', prompt: 'Please explain the OpenSense Labs leave policy including CL, SL, and EL entitlements, and medical insurance coverage.', icon: '🏖️' },
+    { label: 'Enterprise Drupal Post', prompt: 'Draft an engaging LinkedIn post about OpenSense Labs Enterprise Drupal 10 & AI modernization with hashtags.', icon: '📢' },
+    { label: 'Check Global Hub Clocks', prompt: 'What is the exact live wall-clock time across OpenSense India HQ, US Hub, and UK Hub?', icon: '⏰' },
+  ];
+};
+
+// Smart Dynamic Contextual Follow-up Suggestions
+const getSmartFollowUpChips = (content: string): { label: string; prompt: string; icon: string }[] => {
+  if (!content) return [];
+  const low = content.toLowerCase();
+
+  if (low.includes('leave') || low.includes('chhutti') || low.includes('insurance') || low.includes('casual') || low.includes('sick') || low.includes('medical') || low.includes('floater')) {
+    return [
+      { label: 'Draft Leave Application Email', prompt: 'Draft a professional leave application email for 2 days of casual leave to my lead with project handover details.', icon: '✉️' },
+      { label: 'Health Insurance Claim Guide', prompt: 'Explain how cashless hospital admission works under OpenSense ₹5,00,000 family floater policy.', icon: '🏥' },
+      { label: 'Contact Pooja Sharma (HR)', prompt: 'Pooja Sharma HR Lead ka official email aur contact details batao.', icon: '✉️' },
+    ];
+  }
+
+  if (low.includes('linkedin') || low.includes('post') || low.includes('marketing') || low.includes('campaign') || low.includes('drupal') || low.includes('branding')) {
+    return [
+      { label: 'Viral Twitter/X Thread', prompt: 'Convert this into an engaging 4-tweet Twitter/X thread with high-retention hooks and hashtags.', icon: '⚡' },
+      { label: 'Add Enterprise ROI Metrics', prompt: 'Add 3 real B2B enterprise ROI metrics, TCO savings, and 95+ Core Web Vitals stats to this post.', icon: '📊' },
+      { label: 'Generate Tech Banner Image', prompt: 'Create a modern tech marketing banner image representing OpenSense Labs with glowing orange geometric nodes.', icon: '🎨' },
+    ];
+  }
+
+  if (low.includes('python') || low.includes('code') || low.includes('validator') || low.includes('schema') || low.includes('fastapi') || low.includes('api')) {
+    return [
+      { label: 'Add Pytest Unit Tests', prompt: 'Write comprehensive pytest unit tests covering happy path and edge-case error diagnostics for this code.', icon: '🧪' },
+      { label: 'Generate FastAPI REST Endpoint', prompt: 'Wrap this implementation into a complete FastAPI REST API with Swagger documentation and Pydantic models.', icon: '🚀' },
+      { label: 'Analyze Big-O Complexity', prompt: 'Analyze the Big-O time and space complexity of this implementation and suggest optimizations.', icon: '⚡' },
+    ];
+  }
+
+  if (low.includes('image') || low.includes('vision') || low.includes('photo') || low.includes('render') || low.includes('generated')) {
+    return [
+      { label: 'Golden Sunset HQ View', prompt: 'Generate an ultra-realistic 3D architectural render of OpenSense Labs headquarters in Sector 62 Noida at golden sunset.', icon: '🌅' },
+      { label: 'Cyberpunk Developer Lab', prompt: 'Generate an image of an AI software engineer at OpenSense Labs coding with floating holographic multi-screen interfaces.', icon: '🔮' },
+      { label: '3D Glassmorphic Emblem', prompt: 'Generate an artistic 3D glassmorphic OpenSense emblem with warm glowing orange bioluminescent core.', icon: '🎨' },
+    ];
+  }
+
+  if (low.includes('office') || low.includes('time') || low.includes('clock') || low.includes('noida') || low.includes('location')) {
+    return [
+      { label: 'Check Global Wall Clocks', prompt: 'What is the exact live wall-clock time across OpenSense India HQ, US Hub, and UK Hub?', icon: '⏰' },
+      { label: 'Noida HQ Address & Route', prompt: 'Where is OpenSense Labs located in Sector 62 Noida and what are the visitor coordinates?', icon: '📍' },
+      { label: 'Official Team Directory', prompt: 'Show the official internal team directory with verified email channels.', icon: '📋' },
     ];
   }
 
@@ -1995,11 +2047,25 @@ export default function DedicatedChatbotPage() {
         desc: '1024x1024 photorealistic Ultra HD AI art',
       },
       {
-        icon: Phone,
-        dept: '📞 Internal Telecom',
-        title: 'Internal Directory & Calling',
-        prompt: 'Show me the OpenSense Labs internal contact directory for HR, DevOps, Marketing, and Leadership, and how to place a direct call.',
-        desc: 'One-click calling to team leads',
+        icon: Mail,
+        dept: '🏢 Team Directory',
+        title: 'Official Department Contacts',
+        prompt: 'Show me the OpenSense Labs official contact directory for HR, DevOps, Marketing, and Leadership.',
+        desc: 'Verified email channels & leads',
+      },
+      {
+        icon: Clock,
+        dept: '⏰ Global Hubs',
+        title: 'Live Office Times across Hubs',
+        prompt: 'What are the official working hours and current live wall-clock times across OpenSense Noida HQ, US, and UK hubs?',
+        desc: 'Real-time telemetry across Noida, US & UK',
+      },
+      {
+        icon: Mail,
+        dept: '🏢 Team Directory',
+        title: 'Official Department Contacts',
+        prompt: 'Show me the OpenSense Labs official contact directory for HR, DevOps, Marketing, and Leadership.',
+        desc: 'Verified email channels & leads',
       },
       {
         icon: Clock,

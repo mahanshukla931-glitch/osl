@@ -252,7 +252,7 @@ def execute_tool(name: str, arguments: dict) -> dict:
             }
 
         contact_name = arguments.get("contact_name", "OpenSense Contact")
-        phone = arguments.get("phone", "+91 120 456 7890")
+        phone = arguments.get("phone", "")
         department = arguments.get("department", "OpenSense Labs")
         call_id = f"call_{datetime.datetime.utcnow().strftime('%Y%m%d%H%M%S')}"
         clean_phone = phone.replace(" ", "").replace("-", "")
