@@ -1,0 +1,61 @@
+{
+  "enabled": true,
+  "admin_configured": true,
+  "last_updated_by": "admin@opensenselabs.com",
+  "contacts": [
+    {
+      "id": "c1",
+      "name": "Pooja Sharma",
+      "role": "HR Lead & People Operations",
+      "department": "People & Culture (HR)",
+      "phone": "+91 98765 43210",
+      "email": "pooja.hr@opensenselabs.com",
+      "status": "Available"
+    },
+    {
+      "id": "c2",
+      "name": "Vikram Singh",
+      "role": "DevOps & IT Support Lead",
+      "department": "Platform Engineering",
+      "phone": "+91 98765 43211",
+      "email": "vikram.it@opensenselabs.com",
+      "status": "Available"
+    },
+    {
+      "id": "c3",
+      "name": "Neha Verma",
+      "role": "Marketing & Brand Growth Head",
+      "department": "Marketing & Brand Growth",
+      "phone": "+91 98765 43212",
+      "email": "neha.marketing@opensenselabs.com",
+      "status": "In Meeting"
+    },
+    {
+      "id": "c4",
+      "name": "Amit Roy",
+      "role": "VP Enterprise Client Partnerships",
+      "department": "Business Development (Sales)",
+      "phone": "+91 98765 43213",
+      "email": "amit.sales@opensenselabs.com",
+      "status": "Available"
+    },
+    {
+      "id": "c5",
+      "name": "Siddharth Jain",
+      "role": "Chief Technology Officer (CTO)",
+      "department": "Leadership & Strategy",
+      "phone": "+91 98765 43214",
+      "email": "siddharth.cto@opensenselabs.com",
+      "status": "Available"
+    },
+    {
+      "id": "c6",
+      "name": "OpenSense Reception Desk",
+      "role": "Noida HQ Front Desk",
+      "department": "Workplace Operations",
+      "phone": "+91 120 456 7890",
+      "email": "reception@opensenselabs.com",
+      "status": "Available"
+    }
+  ]
+}
