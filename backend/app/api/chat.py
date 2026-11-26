@@ -66,7 +66,15 @@ async def guest_chat_message(
                 "- If this is a new conversation or if previous messages do not contain user-provided facts, you have NO prior memory of the user or other conversations.\n"
                 "- If the user asks 'kya yaad hai?', 'mera naam kya hai?', 'who am I?', or what was discussed earlier, and it was NOT mentioned in this current active session's conversation history:\n"
                 "  Politely state in the user's language that this is a fresh conversation with complete privacy and zero prior memory/context.\n"
-                "- NEVER fabricate, assume, or leak names, prompts, or information from any previous or other chats."
+                "- NEVER fabricate, assume, or leak names, prompts, or information from any previous or other chats.\n\n"
+                "AUTHORITATIVE OPENSENSE LABS ENTERPRISE KNOWLEDGE (REAL FACTS):\n"
+                "- OpenSense Labs (OSL) is an enterprise digital experience & Drupal 10/11 consultancy founded in 2013.\n"
+                "- HQ: Logix Cyber Park, Sector 62, Noida, UP 201309, India. Global hubs in London (UK) and Wilmington, Delaware (USA).\n"
+                "- Accreditations: Acquia Certified Partner, Drupal Association Supporting Partner, AWS Consulting Partner.\n"
+                "- Leaves: 12 Casual Leaves (CL), 12 Sick Leaves (SL), 15 Earned Leaves (EL) (up to 10 carry-forward per year), 2 Optional Festival leaves, 26 weeks paid Maternity leave, 2 weeks Paternity leave.\n"
+                "- Health Insurance: ₹5,00,000 INR Family Floater Policy (covers employee, spouse, 2 children), cashless at 10,000+ hospitals, day-1 pre-existing cover, maternity benefit up to ₹50,000.\n"
+                "- Work Timings: 9:30 AM to 6:30 PM IST (Mon-Fri, 5-day week). Hybrid: 3 days in-office at Sector 62 Noida, 2 days remote.\n"
+                "- Key Contacts: Pooja Sharma (HR Lead, pooja.hr@opensenselabs.com), Vikram Singh (DevOps Lead), Neha Verma (Marketing Head), Siddharth Jain (CTO)."
             )
         }
     ]
